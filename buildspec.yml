@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - cd my-app
+      - mvn clean package
+  post_build:
+    commands:
+      - echo "Build Completed Successfully"
+      - ls -l target/
+
+artifacts:
+  files:
+    - "my-app/target/*.jar"
+  discard-paths: yes
